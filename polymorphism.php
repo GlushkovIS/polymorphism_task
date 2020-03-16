@@ -1,29 +1,37 @@
 <?php
 
+/**
+ * Interface DriverCommon
+ */
 interface DriverCommon
 {
-    public function drive();
+    public function drive(): void;
 
-    public function repair();
+    public function repair(): void;
 }
 
-
+/**
+ * Class CarDriver
+ */
 class CarDriver implements DriverCommon
 {
-    public function drive()
+    public function drive(): void
     {
         echo 'Умею водить.';
     }
 
-    public function repair()
+    public function repair(): void
     {
         echo 'За сервис заплачу!';
     }
 }
 
+/**
+ * Class CarDriverYoung
+ */
 class CarDriverYoung extends CarDriver
 {
-    public function drive()
+    public function drive(): void
     {
         echo 'Пристегните ремни! ';
         parent::drive();
@@ -32,45 +40,51 @@ class CarDriverYoung extends CarDriver
 
 class CarDriverOld extends CarDriver
 {
-    public function drive()
+    public function drive(): void
     {
         parent::drive();
         echo ' Прочь с дороги';
     }
 
-    public function repair()
+    public function repair(): void
     {
         echo 'Сам починю!';
     }
-
 }
 
-
+/**
+ * Class BusDriverCommon
+ */
 class BusDriverCommon implements DriverCommon
 {
-    public function drive()
+    public function drive(): void
     {
         echo 'Осторожно двери закрываются!';
     }
 
-    public function repair()
+    public function repair(): void
     {
         echo 'Пора на автоколонну 1213.';
     }
 }
 
+/**
+ * Class BusDriverYoung
+ */
 class BusDriverYoung extends BusDriverCommon
 {
-    public function repair()
+    public function repair(): void
     {
         echo 'Починю сам.';
     }
 }
 
-
+/**
+ * Class BusDriverOld
+ */
 class BusDriverOld extends BusDriverCommon
 {
-    public function drive()
+    public function drive(): void
     {
         echo 'Включаем радио шансон и поехали!';
     }
